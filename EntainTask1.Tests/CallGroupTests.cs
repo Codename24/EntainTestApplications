@@ -1,3 +1,7 @@
+using EntainTask1.Classes;
+using EntainTask1.Exceptions;
+using Moq;
+
 namespace EntainTask1.Tests
 {
     using System;
@@ -86,6 +90,43 @@ namespace EntainTask1.Tests
             // Assert
             await Assert.ThrowsAsync<Exception>(() => callGroup.Join("another participant"));
         }
-    }
 
+        [Fact]
+        public async Task Join_ShouldTimeout_WhenWaitingForParticipants()
+        {
+            // Arrange
+            int participantCount = 2;
+            var groupCallDelegate = new Mock<Func<IReadOnlyCollection<string>, Task>>();
+            groupCallDelegate.Setup(g => g(It.IsAny<IReadOnlyCollection<string>>())).Returns(Task.CompletedTask);
+            TimeSpan timeout = TimeSpan.FromSeconds(1);
+
+            var callGroup = new CallGroup<string>(participantCount, groupCallDelegate.Object, timeout);
+
+            // Act
+            var joinTask1 = callGroup.Join("participant1");
+
+            // Assert
+            await Assert.ThrowsAsync<CallGroupException>(() => joinTask1);
+        }
+
+        [Fact]
+        public async Task Join_AfterBarrierIsSet_ShouldThrowException()
+        {
+            // Arrange
+            int participantCount = 1;
+            var groupCallDelegate = new Mock<Func<IReadOnlyCollection<string>, Task>>();
+            groupCallDelegate.Setup(g => g(It.IsAny<IReadOnlyCollection<string>>())).Returns(Task.CompletedTask);
+            TimeSpan timeout = TimeSpan.FromSeconds(30);
+
+            var callGroup = new CallGroup<string>(participantCount, groupCallDelegate.Object, timeout);
+
+            // Act
+            await callGroup.Join("participant1");
+            await Assert.ThrowsAsync<Exception>(() => callGroup.Join("participant2"));
+        }
+    }
 }
+
+
+
+
