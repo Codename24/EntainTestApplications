@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntainTask2", "EntainTask2\EntainTask2.csproj", "{DC5FD756-5258-4837-9D9E-A7E59B07FA8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntainTask1", "EntainTask1\EntainTask1.csproj", "{33DC1773-7318-44A1-86EC-4964D3BF6CA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntainTask1.Tests", "EntainTask1.Tests\EntainTask1.Tests.csproj", "{B185F7D0-267E-4C1C-9115-427AF153F7BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC5FD756-5258-4837-9D9E-A7E59B07FA8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5FD756-5258-4837-9D9E-A7E59B07FA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5FD756-5258-4837-9D9E-A7E59B07FA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5FD756-5258-4837-9D9E-A7E59B07FA8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DC1773-7318-44A1-86EC-4964D3BF6CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DC1773-7318-44A1-86EC-4964D3BF6CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DC1773-7318-44A1-86EC-4964D3BF6CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DC1773-7318-44A1-86EC-4964D3BF6CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B185F7D0-267E-4C1C-9115-427AF153F7BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B185F7D0-267E-4C1C-9115-427AF153F7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B185F7D0-267E-4C1C-9115-427AF153F7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B185F7D0-267E-4C1C-9115-427AF153F7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
